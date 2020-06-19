@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+ 
+    <script type="text/javascript" src="/static/js/min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/static/css/list.css">
+</head>
+<body style="background-color: black">
+ 
+ 
+<div class="fav_list">
+    <div data-v-357a65ed="" class="fav_list_box">
+        <div  class="fav_list_title">
+            <h3 class="fav_list_title_h3">搜索结果</h3>
+            <div class="fav_num">
+                共<span >{{ result_count }}</span>条
+            </div>
+        </div>
+        <div  class="my_fav_con">
+            <div>
+                <ul  class="my_fav_list">
+                    {% for result in results %}
+                    <li class="my_fav_list_li" id="">
+                        <a  class="my_fav_list_a" href=/audio?id={{ result.get('id') }}&name={{ result.get('name')|trim }}&artist={{ result.get('artist')[0] }} target="_blank">
+                            歌曲：{{ result.get('name')|trim }} <br> 歌手：{{ result.get('artist')[0] }}
+                        </a>
+                    </li>
+                    {% endfor %}
+
+                </ul> <!---->
+            </div>
+        </div>
+    </div>
+</div>
+ 
+</body>
+

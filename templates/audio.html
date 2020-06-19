@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style type="text/css">
+    .main{
+    text-align: center; /*让div内部文字居中*/
+    background-color: black;
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body bgcolor="black">
+<div class="main">
+<audio src="{{ file }}" controls autoplay loop>
+    <div>
+        <button onclick="document.getElementById('demo').play()">播放声音</button>
+        <button onclick="document.getElementById('demo').pause()">暂停声音</button>
+        <button onclick="document.getElementById('demo').volume+=0.1">提高音量</button>
+        <button onclick="document.getElementById('demo').volume-=0.1">降低音量</button>
+    </div>
+</audio>
+
+<div>
+    <a href=/download?id={{ result.get('id') }}&name={{ result.get('name')|trim }}&artist={{ result.get('artist') }}>
+         <button>下载</button>
+    </a>
+</div>
+</div>
+</body>
+</html>
